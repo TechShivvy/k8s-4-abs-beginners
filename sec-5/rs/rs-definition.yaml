@@ -1,0 +1,26 @@
+# selector is the major difference between rc and rs (defaults to pod labels in rc if not specified whereas for rs its required)
+# apiVersion and kind also differs
+
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: myapp-rs
+  labels:
+    app: myapp
+    type: frontend
+spec:
+  replicas: 3
+  # selector labels = pod labels
+  selector:
+    matchLabels:
+      type: frontend
+  template:
+    metadata:
+      name: myapp-pod
+      labels:
+        app: myapp
+        type: frontend
+    spec:
+      containers:
+        - name: nginx-container
+          image: nginx
