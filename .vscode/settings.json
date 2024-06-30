@@ -1,0 +1,8 @@
+{
+  "yaml.schemas": {
+    "kubernetes://schema/v1@pod": [
+      "file:///c%3A/Documents/k8s-4-abs-beginners/sec-5/nginx.yaml",
+      "file:///c%3A/Documents/k8s-4-abs-beginners/sec-5/ex-14.yaml"
+    ]
+  }
+}
