@@ -1,0 +1,34 @@
+kubectl get pods
+kubectl get all
+sh curl-test.sh
+sh ./curl-test.sh
+kubectl get deploy frontend
+kubectl get deploy frontend -o yaml
+kubectl set image deployment deployment.apps/frontend kodekloud/webapp-color:v1=kodekloud/webapp-color:v2 --record
+kubectl set image deployment.apps/frontend kodekloud/webapp-color:v1=kodekloud/webapp-color:v2 --record
+kubectl set image deployment.apps/frontend simple-webapp=kodekloud/webapp-color:v2 --record
+sh ./curl-test.sh
+sh ./curl-test.sh
+sh ./curl-test.sh
+sh ./curl-test.sh
+sh ./curl-test.sh
+sh ./curl-test.sh
+sh ./curl-test.sh
+sh ./curl-test.sh
+sh ./curl-test.sh
+sh ./curl-test.sh
+sh ./curl-test.sh
+sh ./curl-test.sh
+sh ./curl-test.sh
+kubetcl get pods
+kubectl get pods
+kubectl patch deployment frontend -p '{"spec":{"strategy":{"type":"Recreate"}}}'
+kubectl patch deployment.apps/frontend -p '{"spec":{"strategy":{"type":"Recreate"}}}'
+kubectl edit deployment frontend
+kubectl rollout status deployment.apps/frontend
+kubectl edit deployment frontend
+kubectl edit deployment frontend
+kubectl edit deployment frontend
+kubectl rollout status deployment.apps/frontend
+kubectl set image deployment.apps/frontend simple-webapp=kodekloud/webapp-color:v3
+sh ./curl-test.sh
