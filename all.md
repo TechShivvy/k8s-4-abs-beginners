@@ -187,3 +187,7 @@ kubectl rollout status deployment.apps/myapp-deployment
 kubectl get pods
 kubectl rollout undo deployment.apps/myapp-deployment
 kubectl rollout status deployment.apps/myapp-deployment
+kubectl get service
+minikube ip
+kubectl port-forward service/myapp-service 30008:80
+minikube service myapp-service --url
