@@ -225,3 +225,11 @@ minikube service voting-service result-service --url
 kubectl delete svc/db svc/redis
 kubectl delete svc/voting-service svc/result-service
 kubectl delete pods --all
+kubectl apply -f .\voting-app-deploy.yaml -f .\result-app-deploy.yaml -f .\redis-deploy.yaml -f .\po...
+kubectl apply -f .\voting-app-service.yaml -f .\result-app-service.yaml -f .\redis-service.yaml -f ....
+kubectl get pods,deploy,svc
+kubectl apply -f .\worker-deploy.yaml
+kubectl rollout status -f .\worker-deploy.yaml
+kubectl get pods,deploy,svc
+minikube service voting-service result-service --url
+kubectl delete all -l app=demo-voting-app
