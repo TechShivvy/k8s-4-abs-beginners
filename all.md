@@ -191,3 +191,37 @@ kubectl get service
 minikube ip
 kubectl port-forward service/myapp-service 30008:80
 minikube service myapp-service --url
+kubectl create -f .\voting-app-pod.yaml
+kubectl create -f .\voting-app-service.yaml
+kubectl get pods,svc
+minikube service voting-service --url
+kubectl create -f .\result-app-pod.yaml
+kubectl create -f .\result-app-service.yaml
+cls
+kubectl create -f .\redis-pod.yaml
+kubectl create -f .\postgres-pod.yaml
+kubectl create -f .\postgres-service.yaml
+kubectl create -f .\redis-service.yaml
+kubectl create -f .\worker-app.pod.yaml
+kubectl get pods,svc
+minikube service voting-service result-service --url
+kubectl get pods,svc
+kubectl delete pods worker-app-pod
+kubectl create -f .\worker-app.pod.yaml
+kubectl get pods
+kubectl delete pods postgres-pod
+kubectl create -f .\postgres-pod.yaml
+kubectl get pods
+cls
+kubectl delete svc db
+kubectl create -f .\postgres-service.yaml
+cls
+kubectl get pods,svc
+kubectl create -f .\worker-app.pod.yaml
+kubectl get pods
+cls
+minikube service voting-service,result-service --url
+minikube service voting-service result-service --url
+kubectl delete svc/db svc/redis
+kubectl delete svc/voting-service svc/result-service
+kubectl delete pods --all
